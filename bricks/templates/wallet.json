@@ -1,0 +1,33 @@
+{
+  "project_name": "Project1",
+  "feature_name": "Wallet",
+  "feature_directory": "wallet",
+  "properties": [
+    { "name": "property1", "entityDataType": "UniqueId?", "viewDataType": "UniqueId?"},
+    { "name": "property2", "entityDataType": "double", "viewDataType": "double"},
+    { "name": "property3", "entityDataType": "double", "viewDataType": "double"},
+    { "name": "property4", "entityDataType": "double", "viewDataType": "double"},
+    { "name": "property5", "entityDataType": "double", "viewDataType": "double"},
+    { "name": "property6", "entityDataType": "double", "viewDataType": "double"},
+    { "name": "property7", "entityDataType": "DateTime?", "viewDataType": "DateTime?"},
+    { "name": "property8", "entityDataType": "DateTime?", "viewDataType": "DateTime?"},
+    { "name": "property9", "entityDataType": "DateTime?", "viewDataType": "DateTime?"},
+    { "name": "property10", "entityDataType": "DateTime?", "viewDataType": "DateTime?"},
+    { "name": "property11", "entityDataType": "DateTime?", "viewDataType": "DateTime?"},
+    { "name": "property12", "entityDataType": "DateTime?", "viewDataType": "DateTime?"},
+    { "name": "property13", "entityDataType": "DateTime?", "viewDataType": "DateTime?"},
+    { "name": "property14", "entityDataType": "DateTime?", "viewDataType": "DateTime?"},
+    { "name": "property15", "entityDataType": "DateTime?", "viewDataType": "DateTime?"},
+    { "name": "property16", "entityDataType": "int", "viewDataType": "int"},
+    { "name": "property17", "entityDataType": "int", "viewDataType": "int"},
+    { "name": "property18", "entityDataType": "int", "viewDataType": "int"},
+    { "name": "property19", "entityDataType": "int", "viewDataType": "int"},
+    { "name": "property20", "entityDataType": "int", "viewDataType": "int"}
+  ],
+  "updateMethods": [
+    { "usecaseName": "UpdateBalance", "paramsToUpdate": [{"paramName": "balance", "paramType": "double"}]},
+    { "usecaseName": "RewardA", "paramsToUpdate": [{"paramName": "balance", "paramType": "double"}, {"paramName": "rewardedCoins", "paramType": "double"}, {"paramName": "rewardedAt", "paramType": "DateTime"}]},
+    { "usecaseName": "RewardB", "paramsToUpdate": [{"paramName": "balance", "paramType": "double"}, {"paramName": "rewardedCoins", "paramType": "double"}, {"paramName": "rewardedAt", "paramType": "DateTime"}]},
+    { "usecaseName": "UpdateName", "paramsToUpdate": [{"paramName": "name", "paramType": "String"}]}
+  ]
+}

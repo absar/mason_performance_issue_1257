@@ -1,0 +1,9 @@
+name: mason_performance_issue_1257_hooks
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  mason: ^0.1.0-dev
+  yaml: ^3.1.2
+  dart_style: ^2.3.4

@@ -1,0 +1,28 @@
+{{#updateMethods}}import 'package:dartz/dartz.dart' show Either, Left, Right;
+
+class {{usecaseName}} {
+  final {{feature_name.pascalCase()}}Repository _repository;
+  final LogService _logger;
+
+  {{usecaseName}}(this._repository, this._logger);
+
+  @override
+  Future<Either<Failure, {{feature_name.pascalCase()}}>> call() async {
+    try {
+      late {{feature_name.pascalCase()}} {{feature_name.camelCase()}};
+      Failure? errorResult;
+
+      final result = await _repository.{{usecaseName.camelCase()}}({{#paramsToUpdate}}
+        {{paramName}}: {{feature_name.camelCase()}}.{{paramName}},{{/paramsToUpdate}}
+      );
+      return result.fold(
+        (failure) => Left(failure),
+        (success) => Right({{feature_name.camelCase()}}),
+      );
+    } catch (e, s) {
+      _logger.e('$_logPrefix error', e, s);
+      return const Left(SomethingWrongContactSupportError(secondaryMessage: _logPrefix));
+    }
+  }
+}
+{{/updateMethods}}

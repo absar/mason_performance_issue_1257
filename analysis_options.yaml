@@ -1,0 +1,16 @@
+include: package:flutter_lints/flutter.yaml
+analyzer:
+  language:
+    strict-raw-types: true
+  exclude:
+    - "lib/common/localization/generated/*"
+    - "bricks/code_gen/__brick__/*"
+
+linter:
+  rules:
+    - always_declare_return_types
+    - prefer_single_quotes
+    - sort_child_properties_last
+    - unawaited_futures
+    - unsafe_html
+    - use_super_parameters

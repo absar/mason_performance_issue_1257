@@ -1,0 +1,16 @@
+name: code_gen
+description: A brick to generate a feature
+version: 0.0.1
+repository:
+
+vars:
+  project_name:
+    default: mason_performance_issue_1257
+    type: string
+    description: The project name
+    prompt: What is the project name?
+  feature_name:
+    default: wallet
+    type: string
+    description: The feature name
+    prompt: What is the feature name?
