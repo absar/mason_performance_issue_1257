@@ -2,8 +2,11 @@
 https://github.com/felangel/mason/issues/1257
 
 Generating files using Mason from a list which is not a simple string rather a `List<Map<String, dynamic>>` takes exponentially greater time. 
+
 For example `{{#updateMethods}}{{{usecaseName.snakeCase()}}}.dart{{/updateMethods}}` takes over 10 minutes to generate 4 files on Windows 10 i7 processor with 16gb RAM, the process consumes only around 25% CPU and negligible disk and memory activity, however if you change the name extraction from triple `{` to double e.g. `{{#updateMethods}}{{usecaseName.snakeCase()}}.dart{{/updateMethods}}` then it generates in 5 seconds, however it only generates a single file by appending all names, with all the content meant for the 4 files.
+
 On further investigation we found that increasing number of `context.vars` might be the reason it slows down, e.g. in the config file `/bricks/templates/wallet.json` add more `properties`.
+
 In the pre_gen.dart if you reduce `context.vars` by commenting these lines then the time is reduced exponentially, solving this issue will help adopt Mason for slightly complex use cases by reducing 
 generation time from hours to seconds:
 ```
@@ -12,14 +15,19 @@ generation time from hours to seconds:
 ```
 
 Setup:
+
 Latest mason CLI, Flutter 3.16.9
+
 Windows 10
 
 Steps:
+
 `mason get`
+
 `mason make code_gen -c ./bricks/templates/wallet.json --on-conflict overwrite`
 
 Sample input data:
+
 ```json
 {
   "project_name": "Project1",
